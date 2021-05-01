@@ -17,7 +17,11 @@
         <div class="row">
             <div class="col-md-4">
                 <h4>Upload Image dengan Dropify</h4>
-                <?= $this->session->flashdata('message'); ?>
+                <?php if ($this->session->flashdata('message')) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        <strong><?= $this->session->flashdata('message')?></strong>
+                    </div>
+                <?php endif; ?>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" name="judul" class="form-control" placeholder="Judul">
